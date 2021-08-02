@@ -99,6 +99,7 @@ body{
 .tab-5-hypo, .tab-6-area, .tab-1-tri-check, .tab-3-ang-type, .tab-2-tri-ang, .tab-4-side-type
 {
     padding: 3rem;
+    padding-bottom: 1rem;
     display: none;
     text-align: center;
 }
