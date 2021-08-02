@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Triangle Game</title>
+</head>
+
+<body>
+    <div class="app-area">
+        <header>
+            <h1>Welcome to the Triangle Game</h1>
+        </header>
+        <main>
+            <div class="start-menu">
+                <img class="img-start" src="first.jpg" alt="learn" />
+                <!-- <img class="img-start" src="front.svg"/> -->
+                <div class="tri-info">
+                    <p>A triangle is a polygon with three edges and three vertices. It is one of the basic shapes in
+                        geometry. A triangle has three sides, three vertices, and three angles. The sum of the three
+                        interior angles of a triangle is always 180°. The sum of the length of two sides of a triangle
+                        is always greater than the length of the third side. A triangle with vertices P, Q, and R is
+                        denoted as △PQR.</p>
+                    <br>
+                    <p>Click on Next to learn and play with triangles.</p>
+                    <button class="btn-next">Next</button>
+                </div>
+            </div>
+            <div class="main-menu">
+                <div class="option-area">
+                    <button id="triangle-check" class="tab-design">Is it a Triangle?</button>
+                    <button id="triangle-angle" class="tab-design">Find the third angle?</button>
+                    <button id="angle-type" class="tab-design">Check for Obtuse or Acute</button>
+                    <button id="side-type" class="tab-design">Check for Isosceles or Scalene</button>
+                    <button id="hypo-calc" class="tab-design">Hypotenuse Calculation</button>
+                    <button id="area-calc" class="tab-design">Triangle's Area Calculation</button>
+                </div>
+                <div class="quiz-area">
+                    <img id="img-start" src="front.svg" />
+                    <br>
+                    <!-- first -->
+                    <div class="tab-1-tri-check">
+                        <div style="font-size: x-large;">Enter angles and check whether they will form a triangle or
+                            not?</div>
+                        <input type="number" class="ang1-1" min="0" placeholder="Enter 1st angle">
+                        <input type="number" class="ang1-2" min="0" placeholder="Enter 2nd angle">
+                        <input type="number" class="ang1-3" min="0" placeholder="Enter 3rd angle">
+                        <button class="btn-ang-sum button-design">Check</button>
+                    </div>
+                    <!-- second -->
+                    <div class="tab-2-tri-ang">
+                        <div style="font-size: x-large;">Find the third angle to make a triangle</div>
+                        <div id="ang2-1"></div>
+                        <div id="ang2-2"></div>
+                        <input type="number" id="ang2-3" min="0" placeholder="Enter 3rd angle">
+                        <button class="btn-ang-find button-design">Find</button>
+                    </div>
+                    <!-- <div class="tab-2-tri-ang">
+                        <div style="font-size: x-large;">Enter 2 angles and we will return the third one</div>
+                        <input type="number" class="ang2-1" min="0" placeholder="Enter 1st angle">
+                        <input type="number" class="ang2-2" min="0" placeholder="Enter 2nd angle">
+                        <button class="btn-ang-find button-design">Find</button>
+                    </div> -->
+                    <!-- third -->
+                    <div class="tab-3-ang-type">
+                        <div style="font-size: x-large;">Identify the following as obtuse,acute or right angle triangle
+                        </div>
+                        <p>Rules: Enter initials of type of triangle in small letters like o for obtuse against the
+                            given angles.</p><br>
+                        <div class="ques-sec">
+                            <div class="ques1">
+                                <p>1. 55°,65°,60° : </p>
+                                <input type="text" class="quesA" id="ques3-A" placeholder="Enter o,a,r">
+                            </div>
+                            <div class="ques2">
+                                <p>2. 90°,35°,55° : </p>
+                                <input type="text" class="quesA" id="ques3-B" placeholder="Enter o,a,r">
+                            </div>
+                            <div class="ques3">
+                                <p>3. 97°,35°,48° : </p>
+                                <input type="text" class="quesA" id="ques3-C" placeholder="Enter o,a,r">
+                            </div>
+                            <div class="ques4">
+                                <p>4. 24°,85°,71° : </p>
+                                <input type="text" class="quesA" id="ques3-D" placeholder="Enter o,a,r">
+                            </div>
+                        </div>
+                        <button class="btn-quiz3 button-design">Check..</button>
+                    </div>
+                    <!-- fourth -->
+                    <div class="tab-4-side-type">
+                        <div style="font-size: x-large;">Identify the following as Isosceles,Equilateral or Scalene
+                            triangle</div>
+                        <p>Rules: Enter initials of type of triangle in small letters like e for Equilateral against the
+                            given angles.</p><br>
+                        <div class="ques-sec4">
+                            <div class="ques1">
+                                <p>1. 55°,70°,55° : </p>
+                                <input type="text" id="ques4-A" placeholder="Enter i,e,s">
+                            </div>
+                            <div class="ques2">
+                                <p>2. 60°,60°,60° : </p>
+                                <input type="text" id="ques4-B" placeholder="Enter i,e,s">
+                            </div>
+                            <div class="ques3">
+                                <p>3. 97°,35°,48° : </p>
+                                <input type="text" id="ques4-C" placeholder="Enter i,e,s">
+                            </div>
+                            <div class="ques4">
+                                <p>4. 70°,70°,40° : </p>
+                                <input type="text" id="ques4-D" placeholder="Enter i,e,s">
+                            </div>
+                        </div>
+                        <button class="btn-quiz4 button-design">Check..</button>
+                    </div>
+                    <!-- Fifth -->
+                    <div class="tab-5-hypo">
+                        <div style="font-size: x-large;">Calculation of Hypotenus of the triangle</div>
+                        <input type="number" class="base5" min="0" placeholder="Enter base length">
+                        <input type="number" class="altitude5" min="0" placeholder="Enter altitude length">
+                        <button class="calc-hypo button-design">Calculate Hypotenuse</button>
+                    </div>
+                    <!-- Sixth -->
+                    <div class="tab-6-area">
+                        <div style="font-size: x-large;">Calculation of area of the triangle</div>
+                        <input type="number" class="base6" min="0" placeholder="Enter base length">
+                        <input type="number" class="altitude6" min="0" placeholder="Enter altitude length">
+                        <button class="calc-area button-design">Calculate Area</button>
+                    </div>
+                    <div class="fin-result">heyyyyyy</div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Rishabh</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
