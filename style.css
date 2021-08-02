@@ -21,7 +21,7 @@ body{
     padding: 0.5rem 0;
 }
 .start-menu{
-    display: none;    
+    display: flex;    
     /* flex karna h */
     background-color: var(--secondary-color);
     max-width: 70rem;
@@ -30,7 +30,7 @@ body{
     justify-content: center;
     flex-direction: column;
 }
-#img-start{
+.img-start{
     width:200px;
     padding-bottom: 1rem;
     display: flex;
@@ -52,8 +52,7 @@ body{
     border-radius: 10px;
 }
 .main-menu{
-    /* display: none; karnaa hain */
-    display: flex;
+    display: none;
     background-color: var(--secondary-color);
     justify-content: space-around;
     border: solid black;
