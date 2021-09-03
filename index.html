@@ -36,9 +36,10 @@
                     <button id="side-type" class="tab-design">Check for Isosceles or Scalene</button>
                     <button id="hypo-calc" class="tab-design">Hypotenuse Calculation</button>
                     <button id="area-calc" class="tab-design">Triangle's Area Calculation</button>
+                    <button id="act-quiz" class="tab-design">Quiz</button>
                 </div>
                 <div class="quiz-area">
-                    <img class="img-start" src="front.svg" />
+                    <img class="img-start" src="front.svg" id="work-image" />
                     <br>
                     <!-- first -->
                     <div class="tab-1-tri-check">
@@ -63,12 +64,12 @@
                         <input type="number" class="ang2-2" min="0" placeholder="Enter 2nd angle">
                         <button class="btn-ang-find button-design">Find</button>
                     </div> -->
-                    
+
                     <!-- third -->
                     <div class="tab-3-ang-type">
                         <div style="font-size: x-large;">Identify the following as obtuse,acute or right angle triangle
                         </div>
-                        <p>Rules: Enter initials of type of triangle in small letters like o for obtuse against the
+                        <p>Rules: Enter initials of type of triangle in small letters like "o" for obtuse against the
                             given angles.</p><br>
                         <div class="ques-sec">
                             <div class="ques1">
@@ -94,7 +95,8 @@
                     <div class="tab-4-side-type">
                         <div style="font-size: x-large;">Identify the following as Isosceles,Equilateral or Scalene
                             triangle</div>
-                        <p>Rules: Enter initials of type of triangle in small letters like e for Equilateral against the
+                        <p>Rules: Enter initials of type of triangle in small letters like "e" for Equilateral against
+                            the
                             given angles.</p><br>
                         <div class="ques-sec4">
                             <div class="ques1">
@@ -130,6 +132,60 @@
                         <input type="number" class="altitude6" min="0" placeholder="Enter altitude length">
                         <button class="calc-area button-design">Calculate Area</button>
                     </div>
+                    <!-- Seventh -->
+                    <div class="tab-7-quiz">
+                        <h1>Quiz Time!</h1>
+                        <form id="quiz-form">
+                            <br>
+                            <div class="question-container">
+                                <p><strong>1.</strong>What type of triangle is formed with side lengths of 22,21,25?</p>
+                                <label><input type="radio" name="ques1" class="options-7" value="iso" />Isosceles </label>
+                                <label><input type="radio" name="ques1" class="options-7" value="rig" />Right Angled
+                                </label>
+                                <label><input type="radio" name="ques1" class="options-7" value="sca" />Scalene </label>
+                                <label><input type="radio" name="ques1" class="options-7" value="equ" />Equilateral
+                                </label>
+                            </div>
+                            <div class="question-container">
+                                <p><strong>2.</strong>Find the third angle of triangle having 65° and 67° as other two
+                                    angles?</p>
+                                <label><input type="radio" name="ques2" class="options-7" value="50" />50°</label>
+                                <label><input type="radio" name="ques2" class="options-7" value="48" />48°
+                                </label>
+                                <label><input type="radio" name="ques2" class="options-7" value="38" />38°</label>
+                                <label><input type="radio" name="ques2" class="options-7" value="58" />58°
+                                </label>
+                            </div>
+                            <div class="question-container">
+                                <p><strong>3.</strong>What type of triangle is formed with anges:115°,40°,35°?</p>
+                                <label><input type="radio" name="ques3" class="options-7" value="acu" />Acute </label>
+                                <label><input type="radio" name="ques3" class="options-7" value="rig" />Right Angled
+                                </label>
+                                <label><input type="radio" name="ques3" class="options-7" value="obt" />Obtuse </label>
+                                <label><input type="radio" name="ques3" class="options-7" value="not" />Not a Triangle
+                                </label>
+                            </div>
+                            <div class="question-container">
+                                <p><strong>4.</strong>If a triangle have 2 sides of same length then it is called as?</p>
+                                <label><input type="radio" name="ques4" class="options-7" value="iso" />Isosceles </label>
+                                <label><input type="radio" name="ques4" class="options-7" value="rig" />Right Angled
+                                </label>
+                                <label><input type="radio" name="ques4" class="options-7" value="sca" />Scalene </label>
+                                <label><input type="radio" name="ques4" class="options-7" value="equ" />Equilateral
+                                </label>
+                            </div>
+                            <div class="question-container">
+                                <p><strong>5.</strong>Which set is the example of acute angled triangle?</p>
+                                <label><input type="radio" name="ques5" class="options-7" value="set1" />30°,60°,90°</label>
+                                <label><input type="radio" name="ques5" class="options-7" value="set2" />45°,65°,70°
+                                </label>
+                                <label><input type="radio" name="ques5" class="options-7" value="set3" />120°,30°,30°</label>
+                                <label><input type="radio" name="ques5" class="options-7" value="set4" />92°,61°,27°
+                                </label>
+                            </div>
+                        </form>
+                        <button id="quiz-btn" class="button-design">Submit</button>
+                    </div>
                     <div class="fin-result"></div>
                 </div>
             </div>
@@ -140,5 +196,4 @@
     </div>
     <script src="app.js"></script>
 </body>
-
 </html>

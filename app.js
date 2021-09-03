@@ -11,6 +11,8 @@ var secAngle=Math.floor(Math.random() * 60)+30;
 const btnNext= document.querySelector(".btn-next");
 const mainMenu= document.querySelector(".main-menu");
 const startMenu= document.querySelector(".start-menu");
+const workImage= document.querySelector("#work-image");
+
 
 btnNext.addEventListener("click",()=>{
     startMenu.style.display="none";
@@ -27,7 +29,7 @@ const tab1TriCheck= document.querySelector(".tab-1-tri-check");
 triCheck.addEventListener("click",()=>{
     resMsg(``);
     tab1TriCheck.style.display="block";
-    tab6Area.style.display="none"; tab5Hypo.style.display="none"; tab2TriAng.style.display="none"; tab3AngType.style.display="none";tab4SideType.style.display="none";
+    tab6Area.style.display="none"; tab5Hypo.style.display="none"; tab2TriAng.style.display="none"; tab3AngType.style.display="none";tab4SideType.style.display="none";tab7Quiz.style.display="none";workImage.style.display="flex";
 })
 btnSum.addEventListener("click",()=>{
     var sum=Number(angA.value)+Number(angB.value)+Number(angC.value);
@@ -48,7 +50,7 @@ const tab2TriAng= document.querySelector(".tab-2-tri-ang");
 triAng.addEventListener("click",()=>{
     resMsg(``);
     tab2TriAng.style.display="block";
-    tab6Area.style.display="none"; tab5Hypo.style.display="none";tab1TriCheck.style.display="none"; tab3AngType.style.display="none";tab4SideType.style.display="none";
+    tab6Area.style.display="none"; tab5Hypo.style.display="none";tab1TriCheck.style.display="none"; tab3AngType.style.display="none";tab4SideType.style.display="none";tab7Quiz.style.display="none";workImage.style.display="flex";
     ang1.innerHTML=`First Angle: ${firAngle}°`;
     ang2.innerHTML=`Second Angle: ${secAngle}°`;
 })
@@ -89,7 +91,7 @@ const tab3AngType= document.querySelector(".tab-3-ang-type");
 angType.addEventListener("click",()=>{
     resMsg(``);
     tab3AngType.style.display="inline-block";
-    tab6Area.style.display="none"; tab5Hypo.style.display="none";tab1TriCheck.style.display="none";tab2TriAng.style.display="none";tab4SideType.style.display="none";
+    tab6Area.style.display="none"; tab5Hypo.style.display="none";tab1TriCheck.style.display="none";tab2TriAng.style.display="none";tab4SideType.style.display="none";tab7Quiz.style.display="none";workImage.style.display="flex";
 })
 btn3quiz.addEventListener("click",()=>{
     if(ques3A.value==="a"&&ques3B.value==="r"&&ques3C.value==="o"&&ques3D.value==="a"){
@@ -110,7 +112,7 @@ const tab4SideType= document.querySelector(".tab-4-side-type");
 sideType.addEventListener("click",()=>{
     resMsg(``);
     tab4SideType.style.display="inline-block";
-    tab6Area.style.display="none"; tab5Hypo.style.display="none";tab1TriCheck.style.display="none";tab2TriAng.style.display="none";tab3AngType.style.display="none";
+    tab6Area.style.display="none"; tab5Hypo.style.display="none";tab1TriCheck.style.display="none";tab2TriAng.style.display="none";tab3AngType.style.display="none";tab7Quiz.style.display="none";workImage.style.display="flex";
 })
 btn4quiz.addEventListener("click",()=>{
     if(ques4A.value==="i"&&ques4B.value==="e"&&ques4C.value==="s"&&ques4D.value==="i"){
@@ -130,7 +132,7 @@ const tab5Hypo= document.querySelector(".tab-5-hypo");
 hypoCalc.addEventListener("click",()=>{
     resMsg(``);
     tab5Hypo.style.display="block"; 
-    tab6Area.style.display="none"; tab1TriCheck.style.display="none";tab2TriAng.style.display="none";tab3AngType.style.display="none";tab4SideType.style.display="none";
+    tab6Area.style.display="none"; tab1TriCheck.style.display="none";tab2TriAng.style.display="none";tab3AngType.style.display="none";tab4SideType.style.display="none";tab7Quiz.style.display="none";workImage.style.display="flex";
 })
 calcHypo.addEventListener("click",()=>{
     var b=base5.value*base5.value;
@@ -148,9 +150,34 @@ const tab6Area= document.querySelector(".tab-6-area");
 areaCalc.addEventListener("click",()=>{
     resMsg(``);
     tab6Area.style.display="block";
-    tab5Hypo.style.display="none"; tab1TriCheck.style.display="none";tab2TriAng.style.display="none";tab3AngType.style.display="none";tab4SideType.style.display="none";
+    tab5Hypo.style.display="none"; tab1TriCheck.style.display="none";tab2TriAng.style.display="none";tab3AngType.style.display="none";tab4SideType.style.display="none";tab7Quiz.style.display="none";
 })
 calcArea.addEventListener("click",()=>{
     var area=0.5*base6.value*altitude6.value;
     resMsg(`Area of a triangle is equal to  ${area} with base=${base6.value} & height= ${altitude6.value}`)
+})
+
+// 7: Quiz
+const actQuiz= document.querySelector("#act-quiz");
+const tab7Quiz= document.querySelector(".tab-7-quiz");
+const quizBtn= document.querySelector("#quiz-btn");
+const quizForm= document.querySelector("#quiz-form");
+actQuiz.addEventListener("click",()=>{
+    resMsg(``);
+    workImage.style.display="none";
+    tab7Quiz.style.display="block";
+    tab1TriCheck.style.display="none";tab2TriAng.style.display="none";tab3AngType.style.display="none";tab4SideType.style.display="none";tab5Hypo.style.display="none"; tab6Area.style.display="none";
+})
+const correctAnswer= ["rig","48","obt","iso","set2"];
+quizBtn.addEventListener("click",()=>{
+    var score=0;
+    var index=0;
+    const formAns= new FormData(quizForm);
+    for(let value of formAns.values()){
+        if(value==correctAnswer[index]){
+            score++;
+        }
+    index++;
+    }
+    resMsg(`Your Final score is ${score}/5`)
 })
